@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>滴叠 Dripstack · 999 张付费作品 · $STACK</title>
+<meta name="description" content="滴叠 Dripstack:999 张付费生成艺术品,24 小时先到先得。持有者铸造 $STACK,公开铸造同步开放。"/>
+<link rel="stylesheet" href="css/style.css?v=1"/>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">滴叠 <span>DRIPSTACK</span></a>
+  <nav>
+    <a href="#mint" data-i18n="nav.mint">铸造</a>
+    <a href="#token" data-i18n="nav.token">代币</a>
+    <a href="drip-skill.md" data-i18n="nav.skill">技能文件</a>
+    <button id="lang-btn" type="button">EN</button>
+  </nav>
+</header>
+
+<section id="hero">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div class="kicker" data-i18n="hero.kicker">生成艺术 · 999 张 · 24 小时</div>
+    <h1 data-i18n-html="hero.h1">一滴一滴,<br/><span class="hl">叠成塔。</span></h1>
+    <p class="lede" data-i18n="hero.lede">每一张滴叠都是一座由水滴叠成的塔,在铸造的那一刻由链上种子画成。全部付费,没有免费。供应只有 999 张,窗口只有 24 小时,先到先得。</p>
+    <div class="board">
+      <div class="stat"><span data-i18n="board.minted">已铸造</span><b id="b-minted">–</b></div>
+      <div class="stat"><span data-i18n="board.left">剩余</span><b id="b-left">–</b></div>
+      <div class="stat"><span data-i18n="board.phase">当前阶段</span><b id="b-phase">–</b></div>
+      <div class="stat"><span data-i18n="board.clock">倒计时</span><b id="b-clock">–</b></div>
+    </div>
+    <div class="hero-note" data-i18n="hero.note">上海时间 10:00 开放 · 每张 0.00072 BNB · 无钱包上限</div>
+    <div class="hero-cta">
+      <a class="btn" href="#mint" data-i18n="hero.cta.mint">去铸造</a>
+      <a class="btn alt" href="#token" data-i18n="hero.cta.token">$STACK 代币</a>
+    </div>
+  </div>
+</section>
+
+<section class="gate" id="mint">
+  <div class="wrap">
+    <div class="kicker" data-i18n="mint.kicker">01 · 铸造</div>
+    <h2 data-i18n="mint.h2">24 小时,999 张,先到先得。</h2>
+    <p class="wide" data-i18n="mint.p1">铸造分两个阶段。前 9 小时是智能体优先期:只有持有 Agent ID 的钱包可以铸造。之后向所有钱包开放,直到 999 张铸完或 24 小时结束。价格全程不变,每张 0.00072 BNB,没有免费通道,也没有每钱包上限。</p>
+    <div class="lanes">
+      <div class="lane"><h3 data-i18n="lane1.h">阶段一 · 智能体优先</h3><p data-i18n="lane1.p">上海时间 10:00 至 19:00。持有 Agent ID 的钱包经由自己的智能体铸造。</p></div>
+      <div class="lane"><h3 data-i18n="lane2.h">阶段二 · 公开</h3><p data-i18n="lane2.p">上海时间 19:00 至次日 10:00。所有钱包可铸造剩余作品,售完即止。</p></div>
+    </div>
+    <div class="promptbox">
+      <div class="prompt-head"><span data-i18n="prompt.label">智能体提示词 · 复制并发送给你的智能体</span><button id="copy-btn" type="button" data-i18n="prompt.copy">复制</button></div>
+      <pre id="agent-prompt">Read https://dripstack.space/drip-skill.md and mint Dripstack for me. During the priority phase my wallet must hold an Agent ID; after that any wallet can mint. Price is exactly 0.000720000633600557 BNB per work, quantity is up to me, no per-wallet limit, supply is 999 first come first served for 24 hours only. Report my token ids and stop.</pre>
+    </div>
+    <div class="facts">
+      <div class="fact"><span data-i18n="fact.supply">供应量</span><b>999</b></div>
+      <div class="fact"><span data-i18n="fact.price">价格</span><b>0.00072 BNB / 张</b></div>
+      <div class="fact"><span data-i18n="fact.window">窗口</span><b data-i18n="fact.window.v">24 小时 · 上海时间 10:00 开放</b></div>
+      <div class="fact"><span data-i18n="fact.classes">类别</span><b data-i18n="fact.classes.v">水滴 ±70% · 叠塔 ±27% · 瀑布 ±3%</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="gate" id="token">
+  <div class="wrap">
+    <div class="kicker" data-i18n="tok.kicker">02 · 代币 $STACK</div>
+    <h2 data-i18n="tok.h2">作品是钥匙,代币是水。</h2>
+    <p class="wide" data-i18n="tok.p1">$STACK 总量 9,999,999,999。NFT 窗口关闭后,代币铸造开启,两条通道:持有者凭每张滴叠铸造 999,999 STACK,每张限一次;没有作品的钱包按每份 0.00072 BNB 铸造 99,999 STACK。两条通道都不免费。</p>
+    <p class="wide" data-i18n="tok.p2">明日安排:9 BNB 到位,一部分注入 PancakeSwap 流动性池,一部分空投给滴叠持有者。细节以官网与官方 X 为准。</p>
+    <div class="facts">
+      <div class="fact"><span data-i18n="tf.supply">代币总量</span><b>9,999,999,999</b></div>
+      <div class="fact"><span data-i18n="tf.holder">持有者铸造</span><b>999,999 / 张</b></div>
+      <div class="fact"><span data-i18n="tf.public">公开铸造</span><b data-i18n="tf.public.v">99,999 / 份 · 每份 0.00072 BNB</b></div>
+      <div class="fact"><span data-i18n="tf.open">代币开启</span><b data-i18n="tf.open.v">NFT 窗口关闭时 · 上海时间次日 10:00</b></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow"><span data-i18n="foot.nft">NFT 合约</span><code>0x99A279b6c2Fb174ada6AFc95F50e0199b7aD704b</code></div>
+    <div class="frow"><span data-i18n="foot.token">代币合约</span><code>0x5887386F0d37e1e92138E01802Cf8db655d72554</code></div>
+    <div class="frow"><span data-i18n="foot.mint">代币铸造合约</span><code>0x517b68Af0A170fbA2782A64814FE0E37859065e0</code></div>
+    <p class="fnote" data-i18n="foot.note">铸造通过你的智能体进行。本页只读。时间以中国标准时间(上海)显示。</p>
+  </div>
+</footer>
+<script src="js/lang.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
